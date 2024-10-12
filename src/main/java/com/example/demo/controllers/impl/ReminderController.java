@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.controllers.impl;
 
-import com.example.demo.model.Reminder;
-import com.example.demo.service.ReminderService;
+import com.example.demo.models.Reminder;
+import com.example.demo.services.impl.ReminderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

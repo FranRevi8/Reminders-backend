@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import com.example.demo.model.Reminder;
-import com.example.demo.repository.ReminderRepository;
+import com.example.demo.models.Reminder;
+import com.example.demo.repositories.ReminderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

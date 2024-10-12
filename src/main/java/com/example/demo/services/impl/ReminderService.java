@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.demo.services.impl;
 
-import com.example.demo.model.Reminder;
-import com.example.demo.repository.ReminderRepository;
+import com.example.demo.models.Reminder;
+import com.example.demo.repositories.ReminderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
