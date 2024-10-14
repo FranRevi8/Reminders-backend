@@ -1,14 +1,17 @@
 package com.example.demo;
 
 import com.example.demo.models.Reminder;
+import com.example.demo.models.Role;
 import com.example.demo.models.User;
 import com.example.demo.repositories.ReminderRepository;
 import com.example.demo.repositories.UserRepository;
+import com.example.demo.services.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -19,11 +22,26 @@ public class DataLoader implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public void run(String... args) throws Exception {
 
-        User fran = userRepository.findByUsername("fran");
-        User secundaria = userRepository.findByUsername("secundaria");
+        userService.saveRole(new Role(null, "ROLE_USER"));
+        userService.saveRole(new Role(null, "ROLE_ADMIN"));
+
+        User fran = new User(null, "Fran Revi", "fran", "1234", new ArrayList<>());
+        User secundaria = new User(null, "Secundaria", "secundaria", "1234", new ArrayList<>());
+        User admin = new User(null, "Administrador", "admin", "admin", new ArrayList<>());
+
+        userService.saveUser(fran);
+        userService.saveUser(secundaria);
+        userService.saveUser(admin);
+
+        userService.addRoleToUser("fran", "ROLE_USER");
+        userService.addRoleToUser("secundaria", "ROLE_USER");
+        userService.addRoleToUser("admin", "ROLE_ADMIN");
 
         Reminder reminder1 = new Reminder();
         reminder1.setName("Estás en la cuenta de Fran");
