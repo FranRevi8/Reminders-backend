@@ -142,5 +142,26 @@ public class DataLoader implements CommandLineRunner {
         reminder18.setTime(LocalDateTime.of(2024, 10, 24, 20, 45));
         reminderRepository.save(reminder18);
 
+        Reminder reminder19 = new Reminder();
+        reminder19.setName("Película: Inception");
+        reminder19.setType("Películas");
+        reminder19.setState(false);
+        reminder19.setTime(LocalDateTime.of(2024, 11, 1, 21, 0));
+        reminderRepository.save(reminder19);
+
+        Reminder reminder20 = new Reminder();
+        reminder20.setName("Película: Interstellar");
+        reminder20.setType("Películas");
+        reminder20.setState(false);
+        reminder20.setTime(LocalDateTime.of(2024, 11, 3, 19, 30));
+        reminderRepository.save(reminder20);
+
+        Reminder reminder21 = new Reminder();
+        reminder21.setName("Película: Matrix");
+        reminder21.setType("Películas");
+        reminder21.setState(false);
+        reminder21.setTime(LocalDateTime.of(2024, 11, 7, 22, 15));
+        reminderRepository.save(reminder21);
+
     }
 }
