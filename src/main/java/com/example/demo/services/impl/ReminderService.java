@@ -1,6 +1,7 @@
 package com.example.demo.services.impl;
 
 import com.example.demo.models.Reminder;
+import com.example.demo.models.User;
 import com.example.demo.repositories.ReminderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,9 @@ public class ReminderService {
         if (reminderRepository.existsById(id)) {
             reminderRepository.deleteById(id);
         }
+    }
+
+    public List<Reminder> findByUser(User user) {
+        return reminderRepository.findByUser(user);
     }
 }

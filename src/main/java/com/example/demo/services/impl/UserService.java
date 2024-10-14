@@ -139,4 +139,8 @@ public class UserService implements UserServiceInterface, UserDetailsService {
         log.info("Fetching all users");
         return userRepository.findAll();
     }
+
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }

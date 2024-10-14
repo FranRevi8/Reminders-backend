@@ -31,9 +31,11 @@ public class VueProyectApplication {
 			userService.saveRole(new Role(null, "ROLE_ADMIN"));
 
 			userService.saveUser(new User(null, "Fran Revi", "fran", "1234", new ArrayList<>()));
+			userService.saveUser(new User(null, "Secundaria", "secundaria", "1234", new ArrayList<>()));
 			userService.saveUser(new User(null, "Administrador", "admin", "admin", new ArrayList<>()));
 
 			userService.addRoleToUser("fran", "ROLE_USER");
+			userService.addRoleToUser("secundaria", "ROLE_USER");
 			userService.addRoleToUser("admin", "ROLE_ADMIN");
 
 		};
